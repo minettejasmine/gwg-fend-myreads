@@ -1,4 +1,6 @@
 import React from 'react'
+import MainPage from './MainPage'; /* import data from MainPage file */
+import SearchPage from './SearchPage'; /* import data from SearchPage file */
 // import * as BooksAPI from './BooksAPI'
 import './App.css'
 
@@ -15,7 +17,9 @@ class BooksApp extends React.Component {
 
   render() {
     return (
-
+      <div className="app">
+        <MainPage />
+      </div>
     )
   }
 }
