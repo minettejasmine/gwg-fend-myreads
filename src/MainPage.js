@@ -1,4 +1,5 @@
 import React, { Component } from 'react'; /* connecting MainPage component via react */
+import MyBook from './MyBook'; /* connecting MyBook component to the Main Page */
 
 class MainPage extends Component {
 	render() {
@@ -14,7 +15,7 @@ class MainPage extends Component {
 			          <div className="bookshelf-books">
 			            <ol className="books-grid">
 			              <li>
-
+							<MyBook />
 			              </li>
 			            </ol>
 			          </div>
@@ -24,7 +25,7 @@ class MainPage extends Component {
 			          <div className="bookshelf-books">
 			            <ol className="books-grid">
 			              <li>
-
+							<MyBook />
 			              </li>
 
 			            </ol>
@@ -35,7 +36,7 @@ class MainPage extends Component {
 			          <div className="bookshelf-books">
 			            <ol className="books-grid">
 			              <li>
-
+							<MyBook />
 			              </li>
 
 			            </ol>
