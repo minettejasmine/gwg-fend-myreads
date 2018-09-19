@@ -1,7 +1,7 @@
 import React from 'react';
 import MainPage from './MainPage';
 import SearchPage from './SearchPage';
-import * as BooksAPI from './BooksAPI'
+import * as BooksAPI from './BooksAPI';
 import './App.css'
 
 class BooksApp extends React.Component {
@@ -14,10 +14,13 @@ class BooksApp extends React.Component {
     })
   }
   render() {
-    console.log(this.state.books);
+    /* console.log(this.state.books); Tested whether the array of books would appear in the Console */
     return (
       <div className="app">
-        <MainPage />
+        <MainPage
+          books={this.state.books}
+          /* populates Main Page with current state of books in the array */
+        />
       </div>
     )
   }
