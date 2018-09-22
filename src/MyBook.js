@@ -6,8 +6,12 @@ class MyBook extends Component {
 			<div className="book">
 			  <div className="book-top">
 			    <div className="book-cover" style={{ width: 128, height: 188, backgroundImage: `url("${this.props.book.imageLinks.thumbnail}"` }}></div> {/* Populate the book list item with the book cover image */}
-			    <div className="book-shelf-changer">
-			      <select>
+			    <div className="book-shelf-changer"> {/* Requirement: ability to move books to different shelves */}
+			      <select
+			      	onChange={(event) => this.props.changeShelf(this.props.book, event.target.value
+		      		)}
+		      		value={this.props.defaultShelf}
+		      	  > {/* Requirement: set to default shelf of current shelf location on drop down list to allow for movement to any other shelf */}
 			        <option value="move" disabled>Move to...</option>
 			        <option value="currentlyReading">Currently Reading</option>
 			        <option value="wantToRead">Want to Read</option>

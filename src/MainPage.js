@@ -23,7 +23,9 @@ class MainPage extends Component {
 				              <li key={book.id}>
 								<MyBook
 									book={book}
-								/>
+									changeShelf={this.props.changeShelf}
+									defaultShelf="currentlyReading"
+								/> {/* Requirement: set to default shelf of current shelf location on drop down list to allow for movement to any other shelf */}
 				              </li>
 							))
 			            }
@@ -41,7 +43,9 @@ class MainPage extends Component {
             	              <li key={book.id}>
             					<MyBook
             						book={book}
-            					/>
+            						changeShelf={this.props.changeShelf}
+            						defaultShelf="wantToRead"
+            					/> {/* Requirement: set to default shelf of current shelf location on drop down list to allow for movement to any other shelf */}
             	              </li>
             				))
                         }
@@ -59,7 +63,9 @@ class MainPage extends Component {
             	              <li key={book.id}>
             					<MyBook
 									book={book}
-            					/>
+									changeShelf={this.props.changeShelf}
+									defaultShelf="read"
+            					/> {/* Requirement: set to default shelf of current shelf location on drop down list to allow for movement to any other shelf */}
             	              </li>
             				))
                         }
