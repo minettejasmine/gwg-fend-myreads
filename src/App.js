@@ -27,12 +27,8 @@ class BooksApp extends React.Component {
     /* console.log(this.state.books); Tested whether the array of books would appear in the Console */
     return (
       <div className="app">
-        <MainPage
-          books={this.state.books}
-          /* populates Main Page with current state of books in the array */
-          changeShelf={this.changeShelf}
-          /* Requirement: move books from one shelf to another; changeShelf method passed as props to the Main Page */
-        />
+
+        <SearchPage />
       </div>
     )
   }
