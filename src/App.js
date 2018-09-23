@@ -1,4 +1,5 @@
 import React from 'react';
+import { Route } from 'react-router-dom';
 import MainPage from './MainPage';
 import SearchPage from './SearchPage';
 import * as BooksAPI from './BooksAPI';
@@ -25,10 +26,23 @@ class BooksApp extends React.Component {
 
   render() {
     /* console.log(this.state.books); Tested whether the array of books would appear in the Console */
+    /* populates Main Page with current state of books in the array */
+    /* Requirement: move books from one shelf to another; changeShelf method passed as props to the Main Page */
+    /* populates Search Page with current state of user query results in the array */
+    /* Requirement: move books from one shelf to another; changeShelf method passed as props to the Search Page */
     return (
       <div className="app">
-
-        <SearchPage />
+        <Route exact path='/' render={() => (
+          <MainPage
+          books={this.state.books}
+          changeShelf={this.changeShelf}
+         />
+        )}/>
+        <Route exact path='/search' render={() => (
+          <SearchPage
+            changeShelf={this.changeShelf}
+          />
+        )}/>
       </div>
     )
   }
