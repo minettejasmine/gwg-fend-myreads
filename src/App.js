@@ -30,6 +30,8 @@ class BooksApp extends React.Component {
     /* Requirement: move books from one shelf to another; changeShelf method passed as props to the Main Page */
     /* populates Search Page with current state of user query results in the array */
     /* Requirement: move books from one shelf to another; changeShelf method passed as props to the Search Page */
+    /* If a book is assigned to a shelf on the main page and that book appears on the search page, the correct shelf should be selected on the search page. If that book's shelf is changed on the search page, that change should be reflected on the main page as well. The option "None" should be selected if a book has not been assigned to a shelf. */
+    /* When an item is categorized on the search page and the user navigates to the main page, it appears on that shelf in the main page. */
     return (
       <div className="app">
         <Route exact path='/' render={() => (
@@ -41,6 +43,7 @@ class BooksApp extends React.Component {
         <Route exact path='/search' render={() => (
           <SearchPage
             changeShelf={this.changeShelf}
+            books={this.state.books}
           />
         )}/>
       </div>

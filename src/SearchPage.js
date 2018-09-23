@@ -46,17 +46,24 @@ class SearchPage extends Component {
 			    </div>
 			  </div>
 			  <div className="search-books-results">
-			    <ol className="books-grid"> {/* Display the books that match the search criteria by rendering the UI */}
-			    {
-			    	this.state.bookSearches.map(bookSearch => (
-			    		<li key={bookSearch.id}>
-			    			<MyBook
-			    				book={bookSearch}
-			    				changeShelf={this.props.changeShelf}
-		    				/>
-	    				</li>
-			    	))
-			    }
+			    <ol className="books-grid"> {/* Display the books that match the search criteria by rendering the UI; If a book is assigned to a shelf on the main page and that book appears on the search page, the correct shelf should be selected on the search page. If that book's shelf is changed on the search page, that change should be reflected on the main page as well. The option "None" should be selected if a book has not been assigned to a shelf. */}
+				    {
+				    	this.state.bookSearches.map(bookSearch => {
+				    		let shelf = "none"; // None is selected if a book is not assigned to a shelf
+				    		this.props.books.map(book => (
+				    			book.id === bookSearch.id ? shelf = book.shelf : ''
+				    		));
+				    		return (
+					    		<li key={bookSearch.id}>
+					    			<MyBook
+					    				book={bookSearch}
+					    				changeShelf={this.props.changeShelf}
+					    				defaultShelf={shelf}
+				    				/>
+			    				</li>
+				    		)
+				    	})
+			    	}
 			    </ol>
 			  </div>
 			</div>
