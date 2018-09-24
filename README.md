@@ -35,5 +35,3 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 Udacity provided a backend server for development. The provided file [`BooksAPI.js`](src/BooksAPI.js) contains the methods needed to perform necessary operations on the backend, including [`getAll`](#getall), [`update`](#update), and [`search`](#search) .
 
 For additional resources on React development options for this project, go to: https://www.diigo.com/outliner/fkkvtl/Udacity-MyReads%3A-My-Reads%3A-Book-Tracking-App-Project-(project-%236)?key=4sfz2eik4g . In particular, the Udacity Knowledge Tool and the following two project tutorials were excellent resources for learning how to approach this project: https://www.youtube.com/watch?v=i6L2jLHV9j8 and https://www.youtube.com/watch?v=acJHkd6K5kI&feature=youtu.be .
-
-For details, check out [CONTRIBUTING.md](CONTRIBUTING.md).
