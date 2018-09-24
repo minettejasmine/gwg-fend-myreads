@@ -50,7 +50,7 @@ class SearchPage extends Component {
 				    {
 				    	this.state.bookSearches.map(bookSearch => {
 				    		let shelf = "none"; // None is selected if a book is not assigned to a shelf
-				    		this.props.books.map(book => (
+				    		this.props.books.map(book => ( // Populate search result items to a new array using the map method
 				    			book.id === bookSearch.id ? shelf = book.shelf : ''
 				    		));
 				    		return (
@@ -59,7 +59,7 @@ class SearchPage extends Component {
 					    				book={bookSearch}
 					    				changeShelf={this.props.changeShelf}
 					    				defaultShelf={shelf}
-				    				/>
+				    				/> {/* Update book information based on the results of the search; Maintain integrity of book shelf state; If book shelf is changed on Search Page or Main Page, then the updated shelf will be seen on both pages. */}
 			    				</li>
 				    		)
 				    	})
@@ -70,6 +70,5 @@ class SearchPage extends Component {
 		);
 	}
 }
-
 
 export default SearchPage;

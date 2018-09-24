@@ -28,5 +28,4 @@ class MyBook extends Component {
 	}
 }
 
-
 export default MyBook;
